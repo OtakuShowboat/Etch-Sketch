@@ -1,16 +1,27 @@
 jQuery(function($){
-	let startInt = 1;
+	let startInt = 16;
 	let tableRowStart = '<tr>';
 	let tableRowEnd = '</tr>';
 	$('#reset').on('click', function() {
+		let startInt = parseInt(prompt("What row size do you want? Input one number. Default 16.", "16"));
+		$('tr').remove();
 		
-		$('.box').removeClass('active');
-		
-	});
-	for (let c = 1; c <= 16; c++){
+		for (let c = 1; c <= startInt; c++){
 		$('.container').prepend('<tr class="row"></tr>');
 		};
-	for (let i = 1; i <= 16; i++) {
+		for (let i = 1; i <= startInt; i++) {
+			$('tr').closest('.row').append('<td><div class="box ' + i + '"></div></td>')
+		}
+		$('.box').on('mouseenter', function(){
+				 
+		$(this).addClass('active');
+				 
+	});
+	});
+	for (let c = 1; c <= startInt; c++){
+		$('.container').prepend('<tr class="row"></tr>');
+		};
+	for (let i = 1; i <= startInt; i++) {
 			$('tr').closest('.row').append('<td><div class="box ' + i + '"></div></td>')
 		};
 	$('.box').on('mouseenter', function(){
