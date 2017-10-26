@@ -17,12 +17,18 @@ table {
 	height: 100%;
 	border-style: solid;
 	border-top-color:black;
-	background-color: aqua;
+	background-color: #eee;
 }
 
 table, tbody, td, tr {
 	
 	padding: 0;
 	margin: 0;
+	
+}
+
+.active {
+	
+	background-color: black;
 	
 }
